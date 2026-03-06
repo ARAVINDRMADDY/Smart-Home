@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groww Smart - Intelligent Living Solutions</title>
+   <link rel="icon" type="image/jpeg" href="images/growwpark_logo.jpg">
+  <meta name="description" content="Transform your home with Groww Smart. Premium automation installation for security, lighting, and comfort.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'brand-black': '#000000',
+            'brand-white': '#FFFFFF',
+            'brand-copper': '#B87333',
+            'brand-bronze': '#E6BE8A',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in {
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased transition-colors duration-300 bg-brand-white dark:bg-gray-900">
+
+  <nav class="bg-white dark:bg-brand-black fixed w-full top-0 z-50 shadow-lg border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+    <div class="max-w-[1400px] mx-auto nav-container px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center space-x-3">
+            <div class="flex flex-col">
+              <span class="text-2xl font-bold text-brand-black dark:text-brand-white nav-logo-text transition-colors">Groww <span class="text-brand-copper">Smart</span></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="hidden xl:flex items-center justify-center flex-1 nav-menu-container mx-4">
+          <div class="flex items-center space-x-0.5 xl:space-x-1">
+
+            <div class="relative group">
+              <button class="nav-link text-brand-copper font-bold transition duration-300 flex items-center space-x-1 px-2 py-2 rounded-lg bg-orange-50 dark:bg-white/10">
+                <span class="text-sm">Home</span>
+                <i class="fas fa-chevron-down text-xs"></i>
+              </button>
+              <div class="absolute left-0 mt-2 w-48 bg-brand-white dark:bg-gray-800 rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50 border-t-2 border-brand-copper">
+                <a href="index.html" class="block px-4 py-3 text-brand-black dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 hover:text-brand-copper transition duration-300 rounded-t-md">Home Page 1</a>
+                <a href="home-2.html" class="block px-4 py-3 text-brand-copper font-semibold bg-orange-50 dark:bg-gray-700 dark:text-brand-bronze transition duration-300 rounded-b-md">Home Page 2</a>
+              </div>
+            </div>
+
+            <a href="about.html" class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-sm">About</a>
+            <a href="services.html" class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-sm">Services</a>
+            <a href="products.html" class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-sm">Products</a>
+            <a href="pricing.html" class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-sm">Pricing</a>
+            <a href="blog.html" class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-sm">Blog</a>
+            <a href="faq.html" class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-sm">FAQ</a>
+            <a href="contact.html" class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-sm">Contact</a>
+
+            <div class="relative group">
+              <button class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 flex items-center space-x-1 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10">
+                <span class="text-sm">Dashboard</span>
+                <i class="fas fa-chevron-down text-xs"></i>
+              </button>
+              <div class="absolute right-0 mt-2 w-56 bg-brand-white dark:bg-gray-800 rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50 border-t-2 border-brand-copper">
+                <a href="admin-dashboard.html" class="block px-4 py-3 text-brand-black dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 hover:text-brand-copper transition duration-300 rounded-t-md">
+                  <i class="fas fa-user-shield mr-2"></i>Admin Dashboard
+                </a>
+                <a href="user-dashboard.html" class="block px-4 py-3 text-brand-black dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 hover:text-brand-copper transition duration-300 rounded-b-md">
+                  <i class="fas fa-user mr-2"></i>User Dashboard
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hidden xl:flex items-center space-x-1.5 lg:space-x-2">
+
+          <a href="login.html" class="nav-button bg-brand-copper hover:bg-[#8B4513] text-brand-white px-5 py-2.5 rounded-full font-medium transition duration-300 text-sm flex items-center space-x-2 shadow-md hover:shadow-brand-bronze/20 whitespace-nowrap">
+            <i class="fas fa-user-plus"></i>
+            <span>login</span>
+          </a>
+
+          <button id="rtl-toggle" class="nav-icon-button w-10 h-10 rounded-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 flex items-center justify-center text-gray-800 dark:text-brand-white transition duration-300 font-bold text-xs" title="Toggle RTL">
+            RTL
+          </button>
+
+          <button id="theme-toggle" class="nav-icon-button w-10 h-10 rounded-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 flex items-center justify-center text-gray-800 dark:text-brand-white transition duration-300" title="Toggle Theme">
+            <i class="fas fa-moon dark:hidden text-sm"></i>
+            <i class="fas fa-sun hidden dark:inline text-sm text-brand-bronze"></i>
+          </button>
+
+        </div>
+
+        <div class="xl:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-gray-800 dark:text-brand-white hover:text-brand-copper focus:outline-none p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 transition duration-300">
+            <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 6h18M3 12h18M3 18h18"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden xl:hidden bg-white dark:bg-brand-black border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
+      <div class="px-4 pt-2 pb-4 space-y-1 max-h-[calc(100vh-80px)] overflow-y-auto">
+        <div>
+          <button id="mobile-home-dropdown" class="w-full flex items-center justify-between px-4 py-3 text-brand-copper bg-orange-50 dark:bg-white/10 rounded-lg transition duration-300 font-bold">
+            <span class="text-sm">Home</span>
+            <i class="fas fa-chevron-down text-xs transition-transform duration-300" id="mobile-home-icon"></i>
+          </button>
+          <div id="mobile-home-menu" class="hidden pl-4 mt-1 space-y-1">
+            <a href="index.html" class="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm">Home Page 1</a>
+            <a href="home-2.html" class="block px-4 py-2 text-brand-copper font-semibold bg-gray-100 dark:bg-white/10 rounded-lg transition duration-300 text-sm">Home Page 2</a>
+          </div>
+        </div>
+        <a href="about.html" class="block px-4 py-3 text-gray-800 dark:text-brand-white hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm font-medium">About</a>
+        <a href="services.html" class="block px-4 py-3 text-gray-800 dark:text-brand-white hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm font-medium">Services</a>
+        <a href="products.html" class="block px-4 py-3 text-gray-800 dark:text-brand-white hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm font-medium">Products</a>
+        <a href="pricing.html" class="block px-4 py-3 text-gray-800 dark:text-brand-white hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm font-medium">Pricing</a>
+        <a href="blog.html" class="block px-4 py-3 text-gray-800 dark:text-brand-white hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm font-medium">Blog</a>
+        <a href="faq.html" class="block px-4 py-3 text-gray-800 dark:text-brand-white hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm font-medium">FAQ</a>
+        <a href="contact.html" class="block px-4 py-3 text-gray-800 dark:text-brand-white hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm font-medium">Contact</a>
+        <div>
+          <button id="mobile-dashboard-dropdown" class="w-full flex items-center justify-between px-4 py-3 text-gray-800 dark:text-brand-white hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300">
+            <span class="text-sm font-medium">Dashboard</span>
+            <i class="fas fa-chevron-down text-xs transition-transform duration-300" id="mobile-dashboard-icon"></i>
+          </button>
+          <div id="mobile-dashboard-menu" class="hidden pl-4 mt-1 space-y-1">
+            <a href="admin-dashboard.html" class="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm">
+              <i class="fas fa-user-shield mr-2"></i>Admin Dashboard
+            </a>
+            <a href="user-dashboard.html" class="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm">
+              <i class="fas fa-user mr-2"></i>User Dashboard
+            </a>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-gray-200 dark:border-white/10 mt-3 space-y-2">
+          <a href="register.html" class="block w-full text-center bg-brand-copper hover:bg-[#8B4513] text-brand-white px-4 py-3 rounded-full font-medium transition duration-300 shadow-md text-sm">Register</a>
+          <div class="grid grid-cols-2 gap-2">
+            <button id="mobile-rtl-toggle" class="bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-brand-white px-4 py-3 rounded-lg font-medium text-center transition duration-300 hover:bg-gray-200 dark:hover:bg-white/20 text-sm">RTL</button>
+            <button id="mobile-theme-toggle" class="bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-brand-white px-4 py-3 rounded-lg font-medium text-center transition duration-300 hover:bg-gray-200 dark:hover:bg-white/20 text-sm">
+              <i class="fas fa-moon mr-2 dark:hidden"></i>
+              <i class="fas fa-sun mr-2 hidden dark:inline text-brand-bronze"></i>
+              <span>Theme</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="relative min-h-screen flex items-center justify-center bg-brand-black overflow-hidden pt-20">
+    <div class="absolute inset-0 z-0">
+        <img src="images/home page 2.webp" alt="Smart Home Background" class="w-full h-full object-cover opacity-70">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/40 to-brand-black/10"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 text-center space-y-8 animate-fade-in">
+
+        <h1 class="text-5xl md:text-7xl font-bold text-brand-white leading-tight">
+            The Future of <span class="text-brand-copper">Living</span><br/>
+            Starts at Home.
+        </h1>
+
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+            Seamlessly integrate technology into your daily life. We design, install, and support premium automation systems for the modern homeowner.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <a href="products.html" class="w-full sm:w-auto px-8 py-4 bg-brand-copper hover:bg-[#8B4513] text-brand-white rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-brand-copper/40 text-lg">
+                Explore Products
+            </a>
+            <a href="contact.html" class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-brand-white hover:bg-brand-white hover:text-brand-black text-brand-white rounded-full font-semibold transition-all duration-300 text-lg">
+                Book Consultation
+            </a>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-brand-white/10 mt-12">
+           
+    </div>
+  </section>
+
+  <section class="py-24 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-brand-copper font-bold tracking-wider uppercase text-sm mb-2">Why Upgrade?</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-black dark:text-brand-white">Smart Home Benefits</h2>
+        <p class="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Investing in automation isn't just about cool gadgets. It's about enhancing your quality of life in tangible ways.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-brand-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300">
+          <div class="w-14 h-14 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-leaf text-2xl text-green-600 dark:text-green-400"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-3">Energy Efficiency</h3>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            Smart thermostats and automated lighting can reduce your energy bills by up to 30%. Your home reacts to your presence, ensuring no energy is wasted when you are away.
+          </p>
+        </div>
+
+        <div class="bg-brand-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300">
+          <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-shield-alt text-2xl text-blue-600 dark:text-blue-400"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-3">Peace of Mind</h3>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            Whether you're at work or on vacation, check your security cameras, lock doors, and receive instant alerts if any unusual activity is detected.
+          </p>
+        </div>
+
+        <div class="bg-brand-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300">
+          <div class="w-14 h-14 bg-brand-copper/10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-hand-sparkles text-2xl text-brand-copper"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-3">Ultimate Convenience</h3>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            Create "Scenes" like "Movie Night" or "Good Morning" that adjust lights, blinds, and temperature simultaneously with a single voice command or tap.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-brand-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+              <h2 class="text-3xl md:text-4xl font-bold text-brand-black dark:text-brand-white">Complete Home Intelligence</h2>
+              <p class="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                  One system to control everything. We bring all your devices together.
+              </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="p-6 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-brand-copper transition-all duration-300 group">
+                  <div class="w-14 h-14 bg-brand-copper/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-copper transition-colors duration-300">
+                      <i class="fas fa-lightbulb text-2xl text-brand-copper group-hover:text-brand-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-2">Smart Lighting</h3>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">Set scenes, dim lights, and save energy with automated schedules.</p>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-brand-copper transition-all duration-300 group">
+                  <div class="w-14 h-14 bg-brand-copper/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-copper transition-colors duration-300">
+                      <i class="fas fa-lock text-2xl text-brand-copper group-hover:text-brand-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-2">Secure Access</h3>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">Smart locks and video doorbells that let you monitor your home anywhere.</p>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-brand-copper transition-all duration-300 group">
+                  <div class="w-14 h-14 bg-brand-copper/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-copper transition-colors duration-300">
+                      <i class="fas fa-music text-2xl text-brand-copper group-hover:text-brand-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-2">Multi-Room Audio</h3>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">Play different music in every room or sync your entire home for a party.</p>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-brand-copper transition-all duration-300 group">
+                  <div class="w-14 h-14 bg-brand-copper/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-copper transition-colors duration-300">
+                      <i class="fas fa-temperature-low text-2xl text-brand-copper group-hover:text-brand-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-2">Climate Logic</h3>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">Thermostats that learn your habits and adjust for perfect comfort.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="py-24 bg-brand-black text-brand-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                  <h2 class="text-3xl md:text-4xl font-bold mb-6">Installation Process</h2>
+                  <p class="text-gray-400 mb-8 text-lg">
+                      We make upgrading your home effortless. From the initial design to the final tutorial, we handle everything with precision and care.
+                  </p>
+                  
+                  <div class="space-y-8">
+                      <div class="flex group">
+                          <div class="flex-shrink-0 mr-4">
+                              <div class="w-12 h-12 rounded-full bg-brand-copper flex items-center justify-center font-bold text-white shadow-lg group-hover:bg-brand-bronze transition-colors duration-300">1</div>
+                          </div>
+                          <div>
+                              <h4 class="text-xl font-bold mb-2 text-brand-bronze group-hover:text-white transition-colors duration-300">Consultation & Design</h4>
+                              <p class="text-gray-400">We visit your home, discuss your needs, and design a custom system architecture tailored to your layout.</p>
+                          </div>
+                      </div>
+                      <div class="flex group">
+                          <div class="flex-shrink-0 mr-4">
+                              <div class="w-12 h-12 rounded-full bg-brand-copper flex items-center justify-center font-bold text-white shadow-lg group-hover:bg-brand-bronze transition-colors duration-300">2</div>
+                          </div>
+                          <div>
+                              <h4 class="text-xl font-bold mb-2 text-brand-bronze group-hover:text-white transition-colors duration-300">Professional Installation</h4>
+                              <p class="text-gray-400">Our certified technicians install devices with zero mess, configure your network, and ensure all wiring is concealed.</p>
+                          </div>
+                      </div>
+                      <div class="flex group">
+                          <div class="flex-shrink-0 mr-4">
+                              <div class="w-12 h-12 rounded-full bg-brand-copper flex items-center justify-center font-bold text-white shadow-lg group-hover:bg-brand-bronze transition-colors duration-300">3</div>
+                          </div>
+                          <div>
+                              <h4 class="text-xl font-bold mb-2 text-brand-bronze group-hover:text-white transition-colors duration-300">Training & Support</h4>
+                              <p class="text-gray-400">We teach you how to use the app, set up your first automation scenes, and provide ongoing 24/7 technical support.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                   <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover" alt="Technician installing smart device">
+                   <div class="absolute inset-0 bg-gradient-to-tr from-brand-copper/40 to-transparent"></div>
+                   <div class="absolute bottom-6 left-6 bg-black/70 backdrop-blur-md px-6 py-4 rounded-xl border border-white/10">
+                     <p class="text-brand-bronze font-bold">Certified Installers</p>
+                     <p class="text-xs text-gray-300">Expert team for every project</p>
+                   </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="py-24 bg-brand-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-black dark:text-brand-white">Our Latest Projects</h2>
+        <p class="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          See how we've transformed homes across the region.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="group relative h-80 rounded-2xl overflow-hidden shadow-lg cursor-pointer">
+          <img src="images/salam luxury villa.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Villa Project">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+          <div class="absolute bottom-0 left-0 p-6 w-full">
+            <span class="text-xs font-bold text-brand-copper bg-white/10 px-2 py-1 rounded backdrop-blur-md">Full Automation</span>
+            <h3 class="text-xl font-bold text-white mt-2">Salem Luxury Villa</h3>
+            <p class="text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">Lighting, Security, Climate & Pool Control.</p>
+          </div>
+        </div>
+
+        <div class="group relative h-80 rounded-2xl overflow-hidden shadow-lg cursor-pointer">
+          <img src="images/modern smart kitchen.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Kitchen Project">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+          <div class="absolute bottom-0 left-0 p-6 w-full">
+             <span class="text-xs font-bold text-brand-copper bg-white/10 px-2 py-1 rounded backdrop-blur-md">Kitchen Tech</span>
+            <h3 class="text-xl font-bold text-white mt-2">Modern Smart Kitchen</h3>
+            <p class="text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">Voice controlled appliances and ambient lighting.</p>
+          </div>
+        </div>
+
+        <div class="group relative h-80 rounded-2xl overflow-hidden shadow-lg cursor-pointer">
+          <img src="images/private theater room.webp" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Cinema Project">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+          <div class="absolute bottom-0 left-0 p-6 w-full">
+             <span class="text-xs font-bold text-brand-copper bg-white/10 px-2 py-1 rounded backdrop-blur-md">Home Cinema</span>
+            <h3 class="text-xl font-bold text-white mt-2">Private Theater Room</h3>
+            <p class="text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">4K Projection, Dolby Atmos, Soundproof Automated Doors.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-black dark:text-brand-white">Flexible Pricing Packages</h2>
+        <p class="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Choose a package that fits your home size and automation needs.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        
+        <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-700 relative">
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Starter</h3>
+            <p class="text-gray-500 text-sm mt-2">Perfect for apartments</p>
+            <div class="my-6">
+              <span class="text-4xl font-bold text-brand-black dark:text-white">$999</span>
+              <span class="text-gray-500">/ project</span>
+            </div>
+            <a href="contact.html" class="block w-full py-3 px-4 bg-gray-100 dark:bg-gray-800 text-brand-black dark:text-white font-bold text-center rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Get Started</a>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 p-8 border-t border-gray-100 dark:border-gray-700">
+            <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+              <li class="flex items-center"><i class="fas fa-check text-brand-copper mr-3"></i> Smart Hub Installation</li>
+              <li class="flex items-center"><i class="fas fa-check text-brand-copper mr-3"></i> 5 Smart Light Switches</li>
+              <li class="flex items-center"><i class="fas fa-check text-brand-copper mr-3"></i> 1 Smart Door Lock</li>
+              <li class="flex items-center"><i class="fas fa-check text-brand-copper mr-3"></i> App Configuration</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden border-2 border-brand-copper relative transform md:-translate-y-4">
+          <div class="absolute top-0 inset-x-0 bg-brand-copper text-white text-xs font-bold text-center py-1">MOST POPULAR</div>
+          <div class="p-8 pt-10">
+            <h3 class="text-xl font-bold text-brand-copper">Family Home</h3>
+            <p class="text-gray-500 text-sm mt-2">For 3BHK houses</p>
+            <div class="my-6">
+              <span class="text-4xl font-bold text-brand-black dark:text-white">$2,499</span>
+              <span class="text-gray-500">/ project</span>
+            </div>
+            <a href="contact.html" class="block w-full py-3 px-4 bg-brand-copper text-white font-bold text-center rounded-lg hover:bg-[#8B4513] transition-colors shadow-lg">Get Started</a>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 p-8 border-t border-gray-100 dark:border-gray-700">
+            <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+              <li class="flex items-center"><i class="fas fa-check text-brand-copper mr-3"></i> Everything in Starter</li>
+              <li class="flex items-center"><i class="fas fa-check text-brand-copper mr-3"></i> 2 Security Cameras</li>
+              <li class="flex items-center"><i class="fas fa-check text-brand-copper mr-3"></i> Smart Thermostat</li>
+              <li class="flex items-center"><i class="fas fa-check text-brand-copper mr-3"></i> Voice Assistant (Alexa/Google)</li>
+              <li class="flex items-center"><i class="fas fa-check text-brand-copper mr-3"></i> Automated Curtains (Living Room)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-700 relative">
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Luxury Villa</h3>
+            <p class="text-gray-500 text-sm mt-2">Full home automation</p>
+            <div class="my-6">
+              <span class="text-4xl font-bold text-brand-black dark:text-white">$4,999+</span>
+              <span class="text-gray-500">/ project</span>
+            </div>
+            <a href="contact.html" class="block w-full py-3 px-4 bg-gray-100 dark:bg-gray-800 text-brand-black dark:text-white font-bold text-center rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Contact Sales</a>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 p-8 border-t border-gray-100 dark:border-gray-700">
+            <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+              <li class="flex items-center"><i class="fas fa-check text-brand-copper mr-3"></i> Full Home Audio System</li>
+              <li class="flex items-center"><i class="fas fa-check text-brand-copper mr-3"></i> Complete Security Suite</li>
+              <li class="flex items-center"><i class="fas fa-check text-brand-copper mr-3"></i> Unlimited Scenes & Routines</li>
+              <li class="flex items-center"><i class="fas fa-check text-brand-copper mr-3"></i> Priority 24/7 Support</li>
+              <li class="flex items-center"><i class="fas fa-check text-brand-copper mr-3"></i> 5-Year Hardware Warranty</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="relative py-20 bg-brand-copper overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <h2 class="text-4xl font-bold text-white mb-6">Ready to Transform Your Home?</h2>
+      <p class="text-white/90 text-lg max-w-2xl mx-auto mb-10">
+        Don't wait for the future. Live in it. Book a free consultation today and our experts will design the perfect system for your needs.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="contact.html" class="px-8 py-4 bg-brand-white text-brand-copper font-bold rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+          Book Free Consultation
+        </a>
+        <a href="tel:+919876543210" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300 flex items-center justify-center">
+          <i class="fas fa-phone-alt mr-2"></i> Call Us Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-brand-black text-brand-white pt-20 pb-10 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Groww <span class="text-brand-copper">Smart</span></h3>
+          <p class="text-gray-400 mb-6 leading-relaxed">
+            Transforming homes with intelligent technology. We provide secure, efficient, and easy-to-use automation solutions.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 bg-white/10 hover:bg-brand-copper rounded-full flex items-center justify-center transition-colors duration-300">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/10 hover:bg-brand-copper rounded-full flex items-center justify-center transition-colors duration-300">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/10 hover:bg-brand-copper rounded-full flex items-center justify-center transition-colors duration-300">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/10 hover:bg-brand-copper rounded-full flex items-center justify-center transition-colors duration-300">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Home</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">About Us</a></li>
+            <li><a href="services.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Services</a></li>
+            <li><a href="products.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Products</a></li>
+            <li><a href="pricing.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold mb-6">Support</h4>
+          <ul class="space-y-3">
+            <li><a href="blog.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Blog & News</a></li>
+            <li><a href="faq.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">FAQ / Help Center</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Contact Support</a></li>
+            <li><a href="login.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Customer Login</a></li>
+            <li><a href="register.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Installer Registration</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold mb-6">Contact Us</h4>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-brand-copper mt-1 mr-3"></i>
+              <span class="text-gray-400">123 Tech Park, Salem, Tamil Nadu, India</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone text-brand-copper mr-3"></i>
+              <a href="tel:+919876543210" class="text-gray-400 hover:text-brand-copper transition-colors">+91 98765 43210</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope text-brand-copper mr-3"></i>
+              <a href="mailto:info@growwsmart.com" class="text-gray-400 hover:text-brand-copper transition-colors">info@growwsmart.com</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-clock text-brand-copper mr-3"></i>
+              <span class="text-gray-400">Mon - Sat: 9AM - 8PM</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-500 text-sm mb-4 md:mb-0">
+          © 2026 Groww Smart Automation. All rights reserved.
+        </p>
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-500 hover:text-brand-copper text-sm transition-colors duration-300">Privacy Policy</a>
+          <a href="#" class="text-gray-500 hover:text-brand-copper text-sm transition-colors duration-300">Terms of Service</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    const html = document.documentElement;
+
+    function toggleTheme() {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', toggleTheme);
+    }
+    if (mobileThemeToggle) {
+      mobileThemeToggle.addEventListener('click', toggleTheme);
+    }
+
+    if (localStorage.getItem('theme') === 'dark') {
+      html.classList.add('dark');
+    }
+
+    // RTL Toggle
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+
+    function toggleRTL() {
+      if (html.getAttribute('dir') === 'rtl') {
+        html.removeAttribute('dir');
+        localStorage.setItem('direction', 'ltr');
+      } else {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('direction', 'rtl');
+      }
+    }
+
+    if (rtlToggle) {
+      rtlToggle.addEventListener('click', toggleRTL);
+    }
+    if (mobileRtlToggle) {
+      mobileRtlToggle.addEventListener('click', toggleRTL);
+    }
+
+    if (localStorage.getItem('direction') === 'rtl') {
+      html.setAttribute('dir', 'rtl');
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Mobile Dropdowns
+    const mobileHomeDropdown = document.getElementById('mobile-home-dropdown');
+    const mobileHomeMenu = document.getElementById('mobile-home-menu');
+    const mobileHomeIcon = document.getElementById('mobile-home-icon');
+
+    mobileHomeDropdown.addEventListener('click', () => {
+      mobileHomeMenu.classList.toggle('hidden');
+      mobileHomeIcon.style.transform = mobileHomeMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+    });
+
+    const mobileDashboardDropdown = document.getElementById('mobile-dashboard-dropdown');
+    const mobileDashboardMenu = document.getElementById('mobile-dashboard-menu');
+    const mobileDashboardIcon = document.getElementById('mobile-dashboard-icon');
+
+    mobileDashboardDropdown.addEventListener('click', () => {
+      mobileDashboardMenu.classList.toggle('hidden');
+      mobileDashboardIcon.style.transform = mobileDashboardMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+    });
+  </script>
+</body>
+</html>

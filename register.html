@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Groww Smart</title>
+   <link rel="icon" type="image/jpeg" href="images/growwpark_logo.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'brand-black': '#000000',
+            'brand-white': '#FFFFFF',
+            'brand-copper': '#B87333',
+            'brand-bronze': '#E6BE8A',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in {
+      animation: fadeInUp 0.8s ease-out;
+    }
+    .progress-step {
+      transition: all 0.3s ease;
+    }
+    .progress-step.active {
+      background-color: #B87333; /* brand-copper */
+      color: white;
+      border-color: #B87333;
+    }
+    
+    /* Ensure no horizontal scroll */
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased bg-gray-50 dark:bg-gray-900 h-screen overflow-hidden flex flex-col transition-colors duration-300">
+
+  <nav class="bg-white dark:bg-brand-black border-b border-gray-200 dark:border-gray-800 z-50 flex-shrink-0 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+
+        <div class="flex items-center">
+          <a href="index.html" class="hover:opacity-80 transition-opacity">
+            <h1 class="text-2xl font-bold text-brand-black dark:text-brand-white transition-colors">
+              Groww <span class="text-brand-copper">Smart</span>
+            </h1>
+          </a>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button 
+            id="themeToggle"
+            onclick="toggleTheme()"
+            class="p-2 rounded-lg bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 transition-all text-gray-800 dark:text-brand-white"
+            title="Toggle Dark/Light Mode"
+          >
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun text-brand-bronze hidden dark:inline"></i>
+          </button>
+
+          <button 
+            id="rtlToggle"
+            onclick="toggleRTL()"
+            class="p-2 rounded-lg bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 transition-all text-gray-800 dark:text-brand-white font-bold text-xs w-9 h-9 flex items-center justify-center"
+            title="Toggle RTL/LTR"
+          >
+            <span id="rtlText">RTL</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="absolute top-20 ltr:left-10 rtl:right-10 w-72 h-72 bg-brand-copper/10 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+  <div class="absolute bottom-20 ltr:right-10 rtl:left-10 w-96 h-96 bg-brand-bronze/10 rounded-full blur-3xl animate-pulse pointer-events-none" style="animation-delay: 1.5s;"></div>
+
+  <div class="flex-1 flex items-center justify-center px-4 overflow-hidden relative z-10">
+    <div class="w-full max-w-md">
+      
+      <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-6 border border-gray-100 dark:border-gray-700 animate-fade-in transition-colors duration-300">
+
+        <div class="lg:hidden text-center mb-4">
+          <h1 class="text-xl font-bold text-brand-black dark:text-brand-white transition-colors duration-300">
+            Groww <span class="text-brand-copper">Smart</span>
+          </h1>
+        </div>
+
+        <div class="flex items-center justify-center mb-6 gap-2">
+          <div class="progress-step active w-8 h-8 rounded-full flex items-center justify-center font-bold border-2 text-sm">1</div>
+          <div class="w-8 h-0.5 bg-gray-200 dark:bg-gray-700 rounded transition-colors duration-300"></div>
+          <div class="progress-step w-8 h-8 rounded-full flex items-center justify-center font-bold border-2 border-gray-200 dark:border-gray-600 text-gray-400 text-sm transition-colors duration-300">2</div>
+          <div class="w-8 h-0.5 bg-gray-200 dark:bg-gray-700 rounded transition-colors duration-300"></div>
+          <div class="progress-step w-8 h-8 rounded-full flex items-center justify-center font-bold border-2 border-gray-200 dark:border-gray-600 text-gray-400 text-sm transition-colors duration-300">3</div>
+        </div>
+
+        <div class="text-center mb-6">
+          <h2 class="text-2xl font-bold text-brand-black dark:text-brand-white mb-1 transition-colors duration-300">Create Account</h2>
+          <p class="text-gray-600 dark:text-gray-400 text-sm transition-colors duration-300">Start your smart home journey</p>
+        </div>
+
+        <form class="space-y-4" onsubmit="handleRegister(event)">
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 transition-colors duration-300">First Name</label>
+              <input 
+                type="text" 
+                required
+                placeholder="John"
+                class="w-full px-3 py-2 text-sm rounded-lg border-2 border-gray-200 dark:border-gray-600 dark:bg-gray-700 text-gray-900 dark:text-brand-white focus:border-brand-copper focus:ring-2 focus:ring-brand-copper/20 outline-none transition-all placeholder-gray-400"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 transition-colors duration-300">Last Name</label>
+              <input 
+                type="text" 
+                required
+                placeholder="Doe"
+                class="w-full px-3 py-2 text-sm rounded-lg border-2 border-gray-200 dark:border-gray-600 dark:bg-gray-700 text-gray-900 dark:text-brand-white focus:border-brand-copper focus:ring-2 focus:ring-brand-copper/20 outline-none transition-all placeholder-gray-400"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 transition-colors duration-300">
+              <i class="fas fa-envelope ltr:mr-1 rtl:ml-1 text-brand-copper"></i>Email
+            </label>
+            <input 
+              type="email" 
+              required
+              placeholder="name@example.com"
+              class="w-full px-3 py-2 text-sm rounded-lg border-2 border-gray-200 dark:border-gray-600 dark:bg-gray-700 text-gray-900 dark:text-brand-white focus:border-brand-copper focus:ring-2 focus:ring-brand-copper/20 outline-none transition-all placeholder-gray-400"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 transition-colors duration-300">
+              <i class="fas fa-phone ltr:mr-1 rtl:ml-1 text-brand-copper"></i>Phone
+            </label>
+            <input 
+              type="tel" 
+              required
+              placeholder="+91 98765 43210"
+              class="w-full px-3 py-2 text-sm rounded-lg border-2 border-gray-200 dark:border-gray-600 dark:bg-gray-700 text-gray-900 dark:text-brand-white focus:border-brand-copper focus:ring-2 focus:ring-brand-copper/20 outline-none transition-all placeholder-gray-400"
+            />
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 transition-colors duration-300">Password</label>
+              <div class="relative">
+                <input 
+                  type="password" 
+                  id="password"
+                  required
+                  placeholder="Password"
+                  class="w-full px-3 py-2 text-sm rounded-lg border-2 border-gray-200 dark:border-gray-600 dark:bg-gray-700 text-gray-900 dark:text-brand-white focus:border-brand-copper focus:ring-2 focus:ring-brand-copper/20 outline-none transition-all ltr:pr-8 rtl:pl-8 placeholder-gray-400"
+                />
+                <button 
+                  type="button" 
+                  onclick="togglePassword('password', 'toggleIcon1')"
+                  class="absolute ltr:right-2 rtl:left-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brand-copper dark:hover:text-brand-bronze transition-colors"
+                >
+                  <i class="fas fa-eye text-xs" id="toggleIcon1"></i>
+                </button>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 transition-colors duration-300">Confirm</label>
+              <div class="relative">
+                <input 
+                  type="password" 
+                  id="confirmPassword"
+                  required
+                  placeholder="Confirm"
+                  class="w-full px-3 py-2 text-sm rounded-lg border-2 border-gray-200 dark:border-gray-600 dark:bg-gray-700 text-gray-900 dark:text-brand-white focus:border-brand-copper focus:ring-2 focus:ring-brand-copper/20 outline-none transition-all ltr:pr-8 rtl:pl-8 placeholder-gray-400"
+                />
+                <button 
+                  type="button" 
+                  onclick="togglePassword('confirmPassword', 'toggleIcon2')"
+                  class="absolute ltr:right-2 rtl:left-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brand-copper dark:hover:text-brand-bronze transition-colors"
+                >
+                  <i class="fas fa-eye text-xs" id="toggleIcon2"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <input type="checkbox" required class="w-3.5 h-3.5 rounded border-gray-300 text-brand-copper focus:ring-brand-copper/20 cursor-pointer">
+            <span class="ltr:ml-2 rtl:mr-2 text-xs text-gray-600 dark:text-gray-400 transition-colors duration-300">
+              I agree to <a href="#" class="text-brand-copper font-semibold hover:underline">Terms of Service</a>
+            </span>
+          </div>
+
+          <button 
+            type="submit"
+            class="w-full py-3 bg-brand-copper hover:bg-[#8B4513] text-brand-white font-bold rounded-xl shadow-lg hover:shadow-brand-copper/30 transform hover:scale-[1.02] transition-all duration-300 text-sm mt-4"
+          >
+            <i class="fas fa-user-plus ltr:mr-1 rtl:ml-1"></i>Create Account
+          </button>
+
+          <div class="relative my-4">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-gray-200 dark:border-gray-600 transition-colors duration-300"></div>
+            </div>
+            <div class="relative flex justify-center text-xs">
+              <span class="px-2 bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 transition-colors duration-300">Or sign up with</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <button 
+              type="button"
+              class="flex items-center justify-center px-3 py-2 border-2 border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all"
+            >
+              <svg class="w-4 h-4 ltr:mr-2 rtl:ml-2" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+              <span class="text-xs font-semibold text-gray-700 dark:text-gray-300">Google</span>
+            </button>
+            <button 
+              type="button"
+              class="flex items-center justify-center px-3 py-2 border-2 border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all"
+            >
+              <i class="fab fa-facebook text-blue-600 text-sm ltr:mr-2 rtl:ml-2"></i>
+              <span class="text-xs font-semibold text-gray-700 dark:text-gray-300">Facebook</span>
+            </button>
+          </div>
+
+        </form>
+
+        <div class="mt-4 text-center text-xs text-gray-600 dark:text-gray-400 transition-colors duration-300">
+          Already have an account? 
+          <a href="login.html" class="text-brand-copper font-bold hover:text-[#8B4513] dark:hover:text-brand-bronze transition-colors ltr:ml-1 rtl:mr-1">Sign In</a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function togglePassword(inputId, iconId) {
+      const passwordInput = document.getElementById(inputId);
+      const toggleIcon = document.getElementById(iconId);
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
+      } else {
+        passwordInput.type = 'password';
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
+      }
+    }
+
+    function handleRegister(event) {
+      event.preventDefault();
+
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+
+      const button = event.target.querySelector('button[type="submit"]');
+      button.innerHTML = '<i class="fas fa-spinner fa-spin ltr:mr-2 rtl:ml-2"></i>Creating Account...';
+      button.disabled = true;
+      button.classList.add('opacity-75', 'cursor-not-allowed');
+
+      setTimeout(() => {
+        alert('Account created successfully!');
+        window.location.href = 'login.html';
+      }, 1500);
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.classList.contains('dark');
+
+      if (isDark) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    function toggleRTL() {
+      const html = document.documentElement;
+      const currentDir = html.getAttribute('dir') || 'ltr';
+      const text = document.getElementById('rtlText');
+
+      if (currentDir === 'ltr') {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('direction', 'rtl');
+        text.textContent = 'LTR';
+      } else {
+        html.setAttribute('dir', 'ltr');
+        localStorage.setItem('direction', 'ltr');
+        text.textContent = 'RTL';
+      }
+    }
+
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+
+      const savedDirection = localStorage.getItem('direction') || 'ltr';
+      document.documentElement.setAttribute('dir', savedDirection);
+      
+      const text = document.getElementById('rtlText');
+      if (text) {
+        text.textContent = savedDirection === 'rtl' ? 'LTR' : 'RTL';
+      }
+    })();
+  </script>
+
+</body>
+</html>

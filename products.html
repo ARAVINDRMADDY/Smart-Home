@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Products - Groww Smart</title>
+   <link rel="icon" type="image/jpeg" href="images/growwpark_logo.jpg">
+  <meta name="description" content="Browse our catalog of premium smart home devices: Smart locks, thermostats, lighting controls, and sensors.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'brand-black': '#000000',
+            'brand-white': '#FFFFFF',
+            'brand-copper': '#B87333',
+            'brand-bronze': '#E6BE8A',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in {
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Transition for filtering */
+    .product-card {
+      transition: all 0.4s ease-in-out;
+    }
+    .product-card.hidden-card {
+      display: none; 
+    }
+    .product-card.show-card {
+      animation: fadeInUp 0.5s ease-out;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased transition-colors duration-300 bg-brand-white dark:bg-gray-900">
+
+  <nav class="bg-white dark:bg-brand-black fixed w-full top-0 z-50 shadow-lg border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+    <div class="max-w-[1400px] mx-auto nav-container px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center space-x-3">
+            <div class="flex flex-col">
+              <span class="text-2xl font-bold text-brand-black dark:text-brand-white nav-logo-text transition-colors">Groww <span class="text-brand-copper">Smart</span></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="hidden xl:flex items-center justify-center flex-1 nav-menu-container mx-4">
+          <div class="flex items-center space-x-0.5 xl:space-x-1">
+
+            <div class="relative group">
+              <button class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 flex items-center space-x-1 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10">
+                <span class="text-sm">Home</span>
+                <i class="fas fa-chevron-down text-xs"></i>
+              </button>
+              <div class="absolute left-0 mt-2 w-48 bg-brand-white dark:bg-gray-800 rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50 border-t-2 border-brand-copper">
+                <a href="index.html" class="block px-4 py-3 text-brand-black dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 hover:text-brand-copper transition duration-300 rounded-t-md">Home Page 1</a>
+                <a href="home-2.html" class="block px-4 py-3 text-brand-black dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 hover:text-brand-copper transition duration-300 rounded-b-md">Home Page 2</a>
+              </div>
+            </div>
+
+            <a href="about.html" class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-sm">About</a>
+            <a href="services.html" class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-sm">Services</a>
+            
+            <a href="products.html" class="nav-link text-brand-copper font-bold bg-orange-50 dark:bg-white/10 px-2 py-2 rounded-lg text-sm transition duration-300">Products</a>
+            
+            <a href="pricing.html" class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-sm">Pricing</a>
+            <a href="blog.html" class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-sm">Blog</a>
+            <a href="faq.html" class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-sm">FAQ</a>
+            <a href="contact.html" class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 text-sm">Contact</a>
+
+            <div class="relative group">
+              <button class="nav-link text-gray-800 dark:text-brand-white hover:text-brand-copper font-medium transition duration-300 flex items-center space-x-1 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10">
+                <span class="text-sm">Dashboard</span>
+                <i class="fas fa-chevron-down text-xs"></i>
+              </button>
+              <div class="absolute right-0 mt-2 w-56 bg-brand-white dark:bg-gray-800 rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50 border-t-2 border-brand-copper">
+                <a href="admin-dashboard.html" class="block px-4 py-3 text-brand-black dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 hover:text-brand-copper transition duration-300 rounded-t-md">
+                  <i class="fas fa-user-shield mr-2"></i>Admin Dashboard
+                </a>
+                <a href="user-dashboard.html" class="block px-4 py-3 text-brand-black dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 hover:text-brand-copper transition duration-300 rounded-b-md">
+                  <i class="fas fa-user mr-2"></i>User Dashboard
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hidden xl:flex items-center space-x-1.5 lg:space-x-2">
+
+          <a href="login.html" class="nav-button bg-brand-copper hover:bg-[#8B4513] text-brand-white px-5 py-2.5 rounded-full font-medium transition duration-300 text-sm flex items-center space-x-2 shadow-md hover:shadow-brand-bronze/20 whitespace-nowrap">
+            <i class="fas fa-user-plus"></i>
+            <span>login</span>
+          </a>
+
+          <button id="rtl-toggle" class="nav-icon-button w-10 h-10 rounded-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 flex items-center justify-center text-gray-800 dark:text-brand-white transition duration-300 font-bold text-xs" title="Toggle RTL">
+            RTL
+          </button>
+
+          <button id="theme-toggle" class="nav-icon-button w-10 h-10 rounded-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 flex items-center justify-center text-gray-800 dark:text-brand-white transition duration-300" title="Toggle Theme">
+            <i class="fas fa-moon dark:hidden text-sm"></i>
+            <i class="fas fa-sun hidden dark:inline text-sm text-brand-bronze"></i>
+          </button>
+
+        </div>
+
+        <div class="xl:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-gray-800 dark:text-brand-white hover:text-brand-copper focus:outline-none p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 transition duration-300">
+            <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 6h18M3 12h18M3 18h18"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden xl:hidden bg-white dark:bg-brand-black border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
+      <div class="px-4 pt-2 pb-4 space-y-1 max-h-[calc(100vh-80px)] overflow-y-auto">
+
+        <div>
+          <button id="mobile-home-dropdown" class="w-full flex items-center justify-between px-4 py-3 text-gray-800 dark:text-brand-white hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 font-medium">
+            <span class="text-sm">Home</span>
+            <i class="fas fa-chevron-down text-xs transition-transform duration-300" id="mobile-home-icon"></i>
+          </button>
+          <div id="mobile-home-menu" class="hidden pl-4 mt-1 space-y-1">
+            <a href="index.html" class="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm">Home Page 1</a>
+            <a href="home-2.html" class="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm">Home Page 2</a>
+          </div>
+        </div>
+
+        <a href="about.html" class="block px-4 py-3 text-gray-800 dark:text-brand-white hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm font-medium">About</a>
+        <a href="services.html" class="block px-4 py-3 text-gray-800 dark:text-brand-white hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm font-medium">Services</a>
+        
+        <a href="products.html" class="block px-4 py-3 text-brand-copper font-bold bg-orange-50 dark:bg-white/10 rounded-lg transition duration-300 text-sm">Products</a>
+        
+        <a href="pricing.html" class="block px-4 py-3 text-gray-800 dark:text-brand-white hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm font-medium">Pricing</a>
+        <a href="blog.html" class="block px-4 py-3 text-gray-800 dark:text-brand-white hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm font-medium">Blog</a>
+        <a href="faq.html" class="block px-4 py-3 text-gray-800 dark:text-brand-white hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm font-medium">FAQ</a>
+        <a href="contact.html" class="block px-4 py-3 text-gray-800 dark:text-brand-white hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm font-medium">Contact</a>
+
+        <div>
+          <button id="mobile-dashboard-dropdown" class="w-full flex items-center justify-between px-4 py-3 text-gray-800 dark:text-brand-white hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300">
+            <span class="text-sm font-medium">Dashboard</span>
+            <i class="fas fa-chevron-down text-xs transition-transform duration-300" id="mobile-dashboard-icon"></i>
+          </button>
+          <div id="mobile-dashboard-menu" class="hidden pl-4 mt-1 space-y-1">
+            <a href="admin-dashboard.html" class="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm">
+              <i class="fas fa-user-shield mr-2"></i>Admin Dashboard
+            </a>
+            <a href="user-dashboard.html" class="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-brand-copper dark:hover:text-brand-copper hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition duration-300 text-sm">
+              <i class="fas fa-user mr-2"></i>User Dashboard
+            </a>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-gray-200 dark:border-white/10 mt-3 space-y-2">
+          <a href="register.html" class="block w-full text-center bg-brand-copper hover:bg-[#8B4513] text-brand-white px-4 py-3 rounded-full font-medium transition duration-300 shadow-md text-sm">
+            Register
+          </a>
+          <div class="grid grid-cols-2 gap-2">
+            <button id="mobile-rtl-toggle" class="bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-brand-white px-4 py-3 rounded-lg font-medium text-center transition duration-300 hover:bg-gray-200 dark:hover:bg-white/20 text-sm">
+              RTL
+            </button>
+            <button id="mobile-theme-toggle" class="bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-brand-white px-4 py-3 rounded-lg font-medium text-center transition duration-300 hover:bg-gray-200 dark:hover:bg-white/20 text-sm">
+              <i class="fas fa-moon mr-2 dark:hidden"></i>
+              <i class="fas fa-sun mr-2 hidden dark:inline text-brand-bronze"></i>
+              <span>Theme</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="relative h-screen w-full flex items-center justify-center bg-brand-black overflow-hidden pt-20">
+    <div class="absolute inset-0">
+      <img src="images/products.jpg" onerror="this.src='https://images.unsplash.com/photo-1558002038-1091a166111c?auto=format&fit=crop&q=80&w=2000'" alt="Smart Home Products" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-black/65"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 animate-fade-in">
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-brand-white mb-6 tracking-tight">
+          Premium <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-copper to-brand-bronze">Smart Hardware</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
+          We only install the best. Browse our curated selection of industry-leading devices that power the smartest homes in the world.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="product-catalog" class="py-16 bg-gray-50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-brand-black dark:text-brand-white mb-4">Explore by Category</h2>
+        <div class="w-24 h-1 bg-brand-copper mx-auto rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        
+        <div class="group bg-white dark:bg-gray-800 rounded-2xl p-6 text-center shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700 hover:border-brand-copper dark:hover:border-brand-copper transition-all duration-300 transform hover:-translate-y-1 cursor-pointer" onclick="filterSelection('lighting')">
+          <div class="w-16 h-16 mx-auto bg-orange-50 dark:bg-gray-900 rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-copper transition-colors duration-300">
+            <i class="fas fa-toggle-on text-2xl text-brand-copper group-hover:text-white transition-colors duration-300"></i>
+          </div>
+          <h3 class="font-bold text-brand-black dark:text-brand-white group-hover:text-brand-copper transition-colors">Smart Switches</h3>
+        </div>
+
+        <div class="group bg-white dark:bg-gray-800 rounded-2xl p-6 text-center shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700 hover:border-brand-copper dark:hover:border-brand-copper transition-all duration-300 transform hover:-translate-y-1 cursor-pointer" onclick="filterSelection('security')">
+          <div class="w-16 h-16 mx-auto bg-orange-50 dark:bg-gray-900 rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-copper transition-colors duration-300">
+            <i class="fas fa-video text-2xl text-brand-copper group-hover:text-white transition-colors duration-300"></i>
+          </div>
+          <h3 class="font-bold text-brand-black dark:text-brand-white group-hover:text-brand-copper transition-colors">Smart Cameras</h3>
+        </div>
+
+        <div class="group bg-white dark:bg-gray-800 rounded-2xl p-6 text-center shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700 hover:border-brand-copper dark:hover:border-brand-copper transition-all duration-300 transform hover:-translate-y-1 cursor-pointer" onclick="filterSelection('security')">
+          <div class="w-16 h-16 mx-auto bg-orange-50 dark:bg-gray-900 rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-copper transition-colors duration-300">
+            <i class="fas fa-walking text-2xl text-brand-copper group-hover:text-white transition-colors duration-300"></i>
+          </div>
+          <h3 class="font-bold text-brand-black dark:text-brand-white group-hover:text-brand-copper transition-colors">Motion Sensors</h3>
+        </div>
+
+        <div class="group bg-white dark:bg-gray-800 rounded-2xl p-6 text-center shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700 hover:border-brand-copper dark:hover:border-brand-copper transition-all duration-300 transform hover:-translate-y-1 cursor-pointer" onclick="filterSelection('hubs')">
+          <div class="w-16 h-16 mx-auto bg-orange-50 dark:bg-gray-900 rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-copper transition-colors duration-300">
+            <i class="fas fa-tablet-alt text-2xl text-brand-copper group-hover:text-white transition-colors duration-300"></i>
+          </div>
+          <h3 class="font-bold text-brand-black dark:text-brand-white group-hover:text-brand-copper transition-colors">Control Panels</h3>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-brand-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-wrap justify-center gap-2 mb-12" id="filter-buttons">
+        <button class="filter-btn px-6 py-2 rounded-full bg-brand-copper text-brand-white font-medium shadow-lg transition-transform hover:scale-105 active" onclick="filterSelection('all')">All Devices</button>
+        <button class="filter-btn px-6 py-2 rounded-full bg-gray-100 dark:bg-white/10 border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-300 font-medium hover:bg-gray-200 dark:hover:bg-white/20 transition-all" onclick="filterSelection('lighting')">Lighting</button>
+        <button class="filter-btn px-6 py-2 rounded-full bg-gray-100 dark:bg-white/10 border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-300 font-medium hover:bg-gray-200 dark:hover:bg-white/20 transition-all" onclick="filterSelection('security')">Security</button>
+        <button class="filter-btn px-6 py-2 rounded-full bg-gray-100 dark:bg-white/10 border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-300 font-medium hover:bg-gray-200 dark:hover:bg-white/20 transition-all" onclick="filterSelection('climate')">Climate</button>
+        <button class="filter-btn px-6 py-2 rounded-full bg-gray-100 dark:bg-white/10 border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-300 font-medium hover:bg-gray-200 dark:hover:bg-white/20 transition-all" onclick="filterSelection('hubs')">Hubs</button>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 product-grid">
+
+        <div class="product-card group bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-brand-copper transition-all duration-300 overflow-hidden flex flex-col" data-category="climate">
+          <div class="relative h-64 overflow-hidden bg-gray-100 dark:bg-gray-700">
+            <span class="absolute top-4 left-4 bg-brand-black text-brand-bronze text-xs font-bold px-3 py-1 rounded-full z-10">Best Seller</span>
+            <img src="images/EcoSmart Learning Thermostat.jpg" onerror="this.src='https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=1974&auto=format&fit=crop'" alt="Smart Thermostat" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="mb-2 text-sm text-brand-copper font-medium uppercase tracking-wide">Climate Control</div>
+            <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-2">EcoSmart Learning Thermostat</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-1">Automatically adjusts temperature based on your habits. Saves up to 20% on energy bills.</p>
+            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+              <span class="text-lg font-bold text-brand-black dark:text-brand-white">$249</span>
+              <button class="text-brand-copper hover:text-[#8B4513] font-semibold text-sm">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card group bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-brand-copper transition-all duration-300 overflow-hidden flex flex-col" data-category="security">
+          <div class="relative h-64 overflow-hidden bg-gray-100 dark:bg-gray-700">
+            <img src="images/Guardian Pro Smart Lock.png" onerror="this.src='https://images.unsplash.com/photo-1558002038-109177381792?q=80&w=2070&auto=format&fit=crop'" alt="Smart Lock" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="mb-2 text-sm text-brand-copper font-medium uppercase tracking-wide">Security</div>
+            <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-2">Guardian Pro Smart Lock</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-1">Fingerprint access, remote unlocking, and activity logs. Never hide a key again.</p>
+            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+              <span class="text-lg font-bold text-brand-black dark:text-brand-white">$199</span>
+              <button class="text-brand-copper hover:text-[#8B4513] font-semibold text-sm">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card group bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-brand-copper transition-all duration-300 overflow-hidden flex flex-col" data-category="hubs">
+          <div class="relative h-64 overflow-hidden bg-gray-100 dark:bg-gray-700">
+             <span class="absolute top-4 left-4 bg-brand-bronze text-brand-black text-xs font-bold px-3 py-1 rounded-full z-10">New Arrival</span>
+            <img src="images/Central Core Hub V2.webp" onerror="this.src='https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?q=80&w=1935&auto=format&fit=crop'" alt="Smart Hub" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="mb-2 text-sm text-brand-copper font-medium uppercase tracking-wide">Hubs & Controllers</div>
+            <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-2">Central Core Hub V2</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-1">The brain of your home. Connects Zigbee, Z-Wave, and Wi-Fi devices into one dashboard.</p>
+            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+              <span class="text-lg font-bold text-brand-black dark:text-brand-white">$149</span>
+              <button class="text-brand-copper hover:text-[#8B4513] font-semibold text-sm">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card group bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-brand-copper transition-all duration-300 overflow-hidden flex flex-col" data-category="security">
+          <div class="relative h-64 overflow-hidden bg-gray-100 dark:bg-gray-700">
+            <img src="images/4K Outdoor Sentinel.jpg" onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop'" alt="Smart Camera" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="mb-2 text-sm text-brand-copper font-medium uppercase tracking-wide">Security</div>
+            <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-2">4K Outdoor Sentinel</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-1">Weatherproof 4K camera with color night vision, siren, and spotlight.</p>
+            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+              <span class="text-lg font-bold text-brand-black dark:text-brand-white">$299</span>
+              <button class="text-brand-copper hover:text-[#8B4513] font-semibold text-sm">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card group bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-brand-copper transition-all duration-300 overflow-hidden flex flex-col" data-category="lighting">
+          <div class="relative h-64 overflow-hidden bg-gray-100 dark:bg-gray-700">
+            <img src="images/Luxe Touch Dimmer.jpg" onerror="this.src='https://images.unsplash.com/photo-1563453392212-326f5e854473?q=80&w=2070&auto=format&fit=crop'" alt="Smart Switch" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="mb-2 text-sm text-brand-copper font-medium uppercase tracking-wide">Lighting</div>
+            <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-2">Luxe Touch Dimmer</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-1">Glass finish touch panel. Controls standard bulbs and smart scenes instantly.</p>
+            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+              <span class="text-lg font-bold text-brand-black dark:text-brand-white">$79</span>
+              <button class="text-brand-copper hover:text-[#8B4513] font-semibold text-sm">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card group bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-brand-copper transition-all duration-300 overflow-hidden flex flex-col" data-category="hubs">
+          <div class="relative h-64 overflow-hidden bg-gray-100 dark:bg-gray-700">
+            <img src="images/Gigabit Mesh Node.avif" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bbcbf?q=80&w=2071&auto=format&fit=crop'" alt="Mesh WiFi" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="mb-2 text-sm text-brand-copper font-medium uppercase tracking-wide">Connectivity</div>
+            <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-2">Gigabit Mesh Node</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-1">Expand your network range. Wi-Fi 6 compatible with seamless roaming.</p>
+            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+              <span class="text-lg font-bold text-brand-black dark:text-brand-white">$129</span>
+              <button class="text-brand-copper hover:text-[#8B4513] font-semibold text-sm">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card group bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-brand-copper transition-all duration-300 overflow-hidden flex flex-col" data-category="lighting">
+          <div class="relative h-64 overflow-hidden bg-gray-100 dark:bg-gray-700">
+            <img src="images/Lumina Smart Bulb Color.jpg" onerror="this.src='https://images.unsplash.com/photo-1565538810643-b5bdb714032a?q=80&w=1974&auto=format&fit=crop'" alt="Smart Bulb" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="mb-2 text-sm text-brand-copper font-medium uppercase tracking-wide">Lighting</div>
+            <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-2">Lumina Smart Bulb Color</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-1">16 million colors with adaptive white lighting that syncs with your circadian rhythm.</p>
+            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+              <span class="text-lg font-bold text-brand-black dark:text-brand-white">$35</span>
+              <button class="text-brand-copper hover:text-[#8B4513] font-semibold text-sm">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card group bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-brand-copper transition-all duration-300 overflow-hidden flex flex-col" data-category="security">
+          <div class="relative h-64 overflow-hidden bg-gray-100 dark:bg-gray-700">
+            <img src="images/SecureView Video Doorbell.jpg" onerror="this.src='https://images.unsplash.com/photo-1558002038-1091a166111c?q=80&w=2070&auto=format&fit=crop'" alt="Video Doorbell" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="mb-2 text-sm text-brand-copper font-medium uppercase tracking-wide">Security</div>
+            <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-2">SecureView Video Doorbell</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-1">2K HD video with two-way talk and package detection sensors.</p>
+            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+              <span class="text-lg font-bold text-brand-black dark:text-brand-white">$179</span>
+              <button class="text-brand-copper hover:text-[#8B4513] font-semibold text-sm">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card group bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-brand-copper transition-all duration-300 overflow-hidden flex flex-col" data-category="security">
+          <div class="relative h-64 overflow-hidden bg-gray-100 dark:bg-gray-700">
+            <img src="images/ProShield Window Sensor.jpg" onerror="this.src='https://images.unsplash.com/photo-1585676625895-7d2d38580638?q=80&w=2070&auto=format&fit=crop'" alt="Window Sensor" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="mb-2 text-sm text-brand-copper font-medium uppercase tracking-wide">Security</div>
+            <h3 class="text-xl font-bold text-brand-black dark:text-brand-white mb-2">ProShield Window Sensor</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-1">Instant alerts for window or door breaches. Compact design with 2-year battery life.</p>
+            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+              <span class="text-lg font-bold text-brand-black dark:text-brand-white">$29</span>
+              <button class="text-brand-copper hover:text-[#8B4513] font-semibold text-sm">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-16">
+        <button class="px-8 py-3 bg-transparent border border-gray-300 dark:border-gray-600 text-brand-black dark:text-brand-white rounded-full hover:border-brand-copper hover:text-brand-copper transition-all">
+          Load More
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="py-12 bg-gray-50 dark:bg-gray-800/50 border-y border-gray-200 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-8">Featured Trusted Brands</p>
+      <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+        <div class="text-xl md:text-2xl font-black text-gray-400 dark:text-gray-500 flex items-center space-x-2 hover:text-brand-black dark:hover:text-white transition-colors cursor-pointer">
+          <i class="fab fa-amazon"></i> <span>Alexa</span>
+        </div>
+        <div class="text-xl md:text-2xl font-black text-gray-400 dark:text-gray-500 flex items-center space-x-2 hover:text-brand-black dark:hover:text-white transition-colors cursor-pointer">
+          <i class="fab fa-google"></i> <span>Nest</span>
+        </div>
+        <div class="text-xl md:text-2xl font-black text-gray-400 dark:text-gray-500 flex items-center space-x-2 hover:text-brand-black dark:hover:text-white transition-colors cursor-pointer">
+          <i class="fas fa-ring"></i> <span>Ring</span>
+        </div>
+        <div class="text-xl md:text-2xl font-black text-gray-400 dark:text-gray-500 flex items-center space-x-2 hover:text-brand-black dark:hover:text-white transition-colors cursor-pointer">
+          <i class="fas fa-lightbulb"></i> <span>Philips Hue</span>
+        </div>
+        <div class="text-xl md:text-2xl font-black text-gray-400 dark:text-gray-500 flex items-center space-x-2 hover:text-brand-black dark:hover:text-white transition-colors cursor-pointer">
+          <i class="fas fa-shield-alt"></i> <span>SimpliSafe</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-brand-black text-brand-white pt-20 pb-10 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Groww <span class="text-brand-copper">Smart</span></h3>
+          <p class="text-gray-400 mb-6 leading-relaxed">
+            Transforming homes with intelligent technology. We provide secure, efficient, and easy-to-use automation solutions.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 bg-white/10 hover:bg-brand-copper rounded-full flex items-center justify-center transition-colors duration-300">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/10 hover:bg-brand-copper rounded-full flex items-center justify-center transition-colors duration-300">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/10 hover:bg-brand-copper rounded-full flex items-center justify-center transition-colors duration-300">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/10 hover:bg-brand-copper rounded-full flex items-center justify-center transition-colors duration-300">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Home</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">About Us</a></li>
+            <li><a href="services.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Services</a></li>
+            <li><a href="products.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Products</a></li>
+            <li><a href="pricing.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold mb-6">Support</h4>
+          <ul class="space-y-3">
+            <li><a href="blog.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Blog & News</a></li>
+            <li><a href="faq.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">FAQ / Help Center</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Contact Support</a></li>
+            <li><a href="login.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Customer Login</a></li>
+            <li><a href="register.html" class="text-gray-400 hover:text-brand-copper transition-colors duration-300">Installer Registration</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold mb-6">Contact Us</h4>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-brand-copper mt-1 mr-3"></i>
+              <span class="text-gray-400">123 Tech Park, Salem, Tamil Nadu, India</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone text-brand-copper mr-3"></i>
+              <a href="tel:+919876543210" class="text-gray-400 hover:text-brand-copper transition-colors">+91 98765 43210</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope text-brand-copper mr-3"></i>
+              <a href="mailto:info@growwsmart.com" class="text-gray-400 hover:text-brand-copper transition-colors">info@growwsmart.com</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-clock text-brand-copper mr-3"></i>
+              <span class="text-gray-400">Mon - Sat: 9AM - 8PM</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-500 text-sm mb-4 md:mb-0">
+          © 2026 Groww Smart Automation. All rights reserved.
+        </p>
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-500 hover:text-brand-copper text-sm transition-colors duration-300">Privacy Policy</a>
+          <a href="#" class="text-gray-500 hover:text-brand-copper text-sm transition-colors duration-300">Terms of Service</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    const html = document.documentElement;
+
+    function toggleTheme() {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', toggleTheme);
+    }
+    if (mobileThemeToggle) {
+      mobileThemeToggle.addEventListener('click', toggleTheme);
+    }
+
+    if (localStorage.getItem('theme') === 'dark') {
+      html.classList.add('dark');
+    }
+
+    // RTL Toggle Functionality
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+
+    function toggleRTL() {
+      if (html.getAttribute('dir') === 'rtl') {
+        html.removeAttribute('dir');
+        localStorage.setItem('direction', 'ltr');
+      } else {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('direction', 'rtl');
+      }
+    }
+
+    if (rtlToggle) {
+      rtlToggle.addEventListener('click', toggleRTL);
+    }
+    if (mobileRtlToggle) {
+      mobileRtlToggle.addEventListener('click', toggleRTL);
+    }
+
+    if (localStorage.getItem('direction') === 'rtl') {
+      html.setAttribute('dir', 'rtl');
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Mobile Dropdowns
+    const mobileHomeDropdown = document.getElementById('mobile-home-dropdown');
+    const mobileHomeMenu = document.getElementById('mobile-home-menu');
+    const mobileHomeIcon = document.getElementById('mobile-home-icon');
+
+    mobileHomeDropdown.addEventListener('click', () => {
+      mobileHomeMenu.classList.toggle('hidden');
+      mobileHomeIcon.style.transform = mobileHomeMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+    });
+
+    const mobileDashboardDropdown = document.getElementById('mobile-dashboard-dropdown');
+    const mobileDashboardMenu = document.getElementById('mobile-dashboard-menu');
+    const mobileDashboardIcon = document.getElementById('mobile-dashboard-icon');
+
+    mobileDashboardDropdown.addEventListener('click', () => {
+      mobileDashboardMenu.classList.toggle('hidden');
+      mobileDashboardIcon.style.transform = mobileDashboardMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+    });
+
+    // PRODUCT FILTER FUNCTIONALITY
+    function filterSelection(category) {
+      var x, i;
+      x = document.getElementsByClassName("product-card");
+      if (category == "all") category = "";
+      
+      let visibleCount = 0;
+
+      for (i = 0; i < x.length; i++) {
+        x[i].classList.remove("show-card");
+        x[i].classList.remove("hidden-card"); 
+        
+        if (x[i].getAttribute("data-category").indexOf(category) > -1 || category == "") {
+          x[i].style.display = "flex"; 
+          setTimeout((el) => el.classList.add("show-card"), 10, x[i]); 
+          visibleCount++;
+        } else {
+          x[i].classList.add("hidden-card");
+          x[i].style.display = "none";
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const btnContainer = document.getElementById("filter-buttons");
+        const btns = btnContainer.getElementsByClassName("filter-btn");
+
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                if (current.length > 0) { 
+                    current[0].classList.remove("bg-brand-copper", "text-brand-white", "shadow-lg", "active");
+                    current[0].classList.add("bg-gray-100", "dark:bg-white/10", "text-gray-600", "dark:text-gray-300");
+                }
+                
+                this.classList.remove("bg-gray-100", "dark:bg-white/10", "text-gray-600", "dark:text-gray-300");
+                this.classList.add("bg-brand-copper", "text-brand-white", "shadow-lg", "active");
+            });
+        }
+    });
+  </script>
+</body>
+</html>

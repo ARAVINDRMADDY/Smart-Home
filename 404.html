@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Groww Smart</title>
+  <link rel="icon" type="image/jpeg" href="images/growwpark_logo.jpg">
+  <meta name="description" content="The page you're looking for doesn't exist. Return to Groww Smart homepage.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'brand-black': '#000000',
+            'brand-white': '#FFFFFF',
+            'brand-copper': '#B87333',
+            'brand-bronze': '#E6BE8A',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    .pulse-slow {
+      animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased transition-colors duration-300 bg-brand-white dark:bg-gray-900">
+
+  <main class="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+    
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-20 left-20 w-64 h-64 bg-brand-copper/10 rounded-full blur-3xl pulse-slow"></div>
+      <div class="absolute bottom-20 right-20 w-96 h-96 bg-brand-bronze/10 rounded-full blur-3xl pulse-slow" style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="max-w-4xl w-full text-center relative z-10">
+
+      <div class="mb-8 animate-fade-in float-animation">
+        <div class="inline-block relative">
+          <div class="text-[180px] md:text-[240px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-copper to-[#8B4513] leading-none">
+            404
+          </div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <i class="fas fa-compass text-6xl md:text-8xl text-brand-black/10 dark:text-brand-white/10"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12 animate-fade-in">
+        <h2 class="text-3xl md:text-5xl font-bold text-brand-black dark:text-brand-white mb-4">
+          Oops! Page Not Found
+        </h2>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          The page you're looking for seems to have been moved, deleted, or doesn't exist. Let's get you back on track to exploring smart living.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in">
+        <a href="index.html" class="inline-flex items-center px-8 py-4 bg-brand-copper hover:bg-[#8B4513] text-brand-white rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+          <i class="fas fa-home mr-2"></i>
+          <span>Back to Home</span>
+        </a>
+        <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-white dark:bg-gray-800 hover:bg-brand-copper dark:hover:bg-brand-copper hover:text-white dark:hover:text-white text-brand-black dark:text-brand-white border border-gray-300 dark:border-gray-600 rounded-full font-semibold transition-all duration-300 shadow-lg group">
+          <i class="fas fa-envelope mr-2 group-hover:text-white"></i>
+          <span>Contact Support</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+
+</body>
+</html>
